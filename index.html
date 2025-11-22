@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natã Pires. | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <h1><a href="#" class="logo">Natã Pires</a></h1>
+            
+            <div class="menu-links">
+                <a href="#hero">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#experiência">Experiência</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+            </div>
+            
+            <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container hero-content">
+                <img src="./assets/avatar.png" alt="Foto Natã Pires" class="profile-pic">
+                <h2>Natã Pires</h2>
+                <span class="btn btn-primary">Software Developer</span>
+                <p>Back-End Developer focado em construir produtos digitais completos, tanto para plataformas web, quanto mobile. Atuo hoje com tecnologias modernas e escaláveis, como JavaScript, C#, .NET
+                    e venho me capacitando em Advpl (Protheus) e .NET Maui.
+                </p>
+                <div class="hero-links">
+                    <a href="https://github.com/Natapires" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/natapiresferreira/" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="container">
+
+                <h2 class="section-title">Sobre Mim</h2>
+                <p class="journey-layout">Desenvolvedor apaixonado por tecnologia e pelo o que faz, com +1 ano de experiência criando soluções inovadoras e escaláveis.</p>
+                
+                <!-- Contêiner Flex/Grid para as Duas Colunas-->
+                <div class="journey-layout">
+
+                    <!--COLUNA A ESQUERDA: Texto e Competências-->
+                    <div class="journey-content-left">
+
+                        <h3>Minha Jornada</h3>
+
+                        <p>Comecei minha trajetória na tecnologia em 2020, iniciando meus estudos em programação e evoluindo rapidamente na área. Desde então, direcionei meu foco para o desenvolvimento com C# e .NET, atuando também como DevOps Engineer em 2023. Atualmente, trabalho na Totvs como Técnico de Implantação, onde continuo expandindo minhas habilidades e participando de projetos desafiadores.</p>
+                        
+                        <p>Sou apaixonado por criar soluções que entreguem uma ótima experiência ao usuário e estou sempre aprendendo novas tecnologias e ferramentas.</p>
+
+                        <h3>Principais Competências</h3>
+
+                        <div class="competencies-area">
+                            
+                            <h4>Frontend</h4>
+                            <div class="tag-group">
+                                <span class="tag tag-frontend">HTML</span>
+                                <span class="tag tag-frontend">CSS</span>
+                                <span class="tag tag-frontend">JavaScript</span>
+                            </div>
+
+                            <h4>Backend</h4>
+                            <div class="tag-group">
+                                <span class="tag tag-backend">C#</span>
+                                <span class="tag tag-backend">.NET</span>
+                                <span class="tag tag-backend">Python</span>
+                            </div>
+
+                            <h4>DevOps & Cloud</h4>
+                            <div class="tag-group">
+                                <span class="tag tag-devops">Azure</span>
+                                <span class="tag tag-devops">AWS</span>
+                                <span class="tag tag-devops">Docker</span>
+                            </div>
+
+                            <h4>ERP</h4>
+                            <div class="tag-group">
+                                <span class="tag tag-devops">Protheus</span>
+                                <span class="tag tag-backend">Advpl</span>
+                            </div>
+                        </div>       
+                    </div>
+
+                    <!-- COLUNA DIREITA: Cards de Destaque -->
+                    <div class="journey-content-right">
+                        
+                        <!-- Card 1: Back End Developer -->
+                        <div class="info-card">
+                            <div class="icon-box icon-code">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="card-text">
+                                <h4>Back End Developer</h4>
+                                <p>Especializando em tecnologias modernas como C#, .NET e Python</p>
+                            </div>
+                        </div>
+
+                    <!-- Card 2: Experiência Enterprise -->
+                    <div class="info-card">
+                        <div class="icon-box icon-rocket">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="card-text">
+                            <h4>Experiência Enterprise</h4>
+                            <p>Trabalha em uma empresa de destaque: TOTVS</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Trabalho em Equipe -->
+                    <div class="info-card">
+                        <div class="icon-box icon-team">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-text">
+                            <h4>Trabalho em Equipe</h4>
+                            <p>Experiência em times multidisciplinares e metodologias ágeis</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Foco em Qualidade -->
+                    <div class="info-card">
+                        <div class="icon-box icon-quality">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="card-text">
+                            <h4>Foco em Qualidade</h4>
+                            <p>Comprometido com código limpo, escalabilidade e boas práticas</p>
+                        </div>
+                    </div>
+
+                </div>   
+            </div>
+        </section>
+
+        <!-- NOVO CONTEÚDO PARA EXPERIÊNCIA PROFISSIONAL -->
+        <section id="experiência">
+            <div class="container">
+                <h2 class="section-title">Experiência Profissional</h2>
+                <p class="section-subtitle">Minha jornada profissional através de empresas inovadoras e projetos desafiadores.</p>
+
+                <!-- CONTAINER PRINCIPAL DA LINHA DO TEMPO -->
+                <div class="timeline-container">
+
+                    <!-- ITEM 1: Técnico de Implantação (TOTVS) - ATUAL -->
+                    <div class="timeline-item">
+                        <!-- Card de Conteúdo -->
+                        <div class="timeline-card">
+                                                    <!-- Data e Local (Flutuam para a direita no desktop) -->
+                        <div class="timeline-meta">
+                            <span><i class="fas fa-calendar-alt"></i> May 2025 - Presente</span>
+                            <span><i class="fas fa-map-marker-alt"></i> São Paulo, SP - Híbrida</span>
+                        </div>
+
+                            <h3 class="job-title">Técnico de Implantação</h3>
+                            <p class="company-name"><i class="fas fa-building"></i> TOTVS <span class="badge badge-current">Atual</span></p>
+                            
+                            <p class="job-description">
+                                Atuo na implementação e customização de sistemas ERP (Protheus), realizando análises técnicas e desenvolvendo soluções em Advpl para atender às necessidades específicas dos clientes.
+                            </p>
+
+                            <h4 class="tech-title">Principais Tecnologias:</h4>
+                            <div class="tag-group">
+                                <span class="tag tag-backend">Advpl</span>
+                                <span class="tag tag-devops">Protheus</span>
+                                <span class="tag tag-backend">SQL Server</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ITEM 2: DevOps Engineer (Empresa 2) -->
+                    <div class="timeline-item">
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span><i class="fas fa-calendar-alt"></i> Abril 2023 - Jan 2024</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Mogi das Cruzes, SP - Presencial</span>
+                            </div>
+                            <h3 class="job-title">Estágio DevOps Engineer</h3>
+                            <p class="company-name"><i class="fas fa-building"></i> Cloud Dog</p>
+                            
+                            <p class="job-description">
+                                Responsável por otimizar pipelines de CI/CD, gerenciar infraestrutura em nuvem (AWS) e implementar monitoramento para garantir a estabilidade e a escalabilidade das aplicações.
+                            </p>
+
+                            <h4 class="tech-title">Principais Tecnologias:</h4>
+                            <div class="tag-group">
+                                <span class="tag tag-devops">AWS</span>
+                                <span class="tag tag-devops">Docker</span>
+                                <span class="tag tag-backend">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FIM DO NOVO CONTEÚDO PARA EXPERIÊNCIA PROFISSIONAL -->
+
+        <section id="projetos">
+            <div class="container">
+                <h2>Meus Projetos</h2>
+                <p>
+                    Alguns dos projetos que desenvolvi, demonstrando algumas tecnologias e <br>soluções para problemas complexos.<br>
+                </p>
+                <div class="projetos-grid">
+                    
+                    <div class="card">
+                        <img src=".//assets/images/projetoapi.png" alt="Imagem de um projeto de API">
+                        <h3>Plann.er API</h3>
+                        <p>
+                            Esse projeto foi feito com o foco em agendamento de viagens, consulta, atualização e exclusão de reserva de viagem.
+                        </p>
+                        <a href="https://github.com/Natapires/Plann.er" target="_blank">Ver Código</a>
+                        <a href="https://github.com/Natapires" target="_blank">Acesse outros projetos</a>
+                    </div>
+                    
+                    <div class="card">
+                        <img src=".//assets/images/projetodrabeatriz.png" alt="Imagem do site da Dra Beatriz">
+                        <h3>Projeto Dra Beatriz Cardoso</h3>
+                        <p>
+                            O projeto é focado em links de direcionamento para agendamento de consulta, e compras diretamento no whatsapp da Dra Beatriz.
+                        </p>
+                        <a href="https://drabeatrizcardoso.vercel.app/" target="_blank">Acessar site</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <h2>Vamos Conversar?</h2>
+                <p>Estou disponível para discutir novos projetos, oportunidades criativas ou <br>
+                    conversar sobre tecnologia e IA.<br></p>
+                <div class="contato-links">
+                    <a href="mailto:pires.nata1998@gmail.com" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Enviar Email
+                    </a>
+                    <a href="seu-curriculo.pdf" download="Curriculo_Natã_Pires.pdf" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Baixar meu CV
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Desenvolvido por Natã Pires</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

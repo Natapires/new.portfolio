@@ -1,0 +1,774 @@
+/* style.css */
+
+/* --- VARIÁVEIS DE COR (Dark Mode) --- */
+:root {
+    --cor-fundo: #FFFFFF;
+    --cor-fundo-secundario: #f4f4f4;
+    --cor-texto: #333333;
+    --cor-titulo: #111111;
+    --cor-link: #007bff;
+    --cor-borda: #dddddd;
+    
+    /* Cores de Destaque para Cards e Tags */
+    --cor-destaque-code: #6c63ff; /* Roxo principal */
+    --cor-destaque-rocket: #ff9800; /* Laranja */
+    --cor-destaque-team: #00bcd4; /* Azul Claro */
+    --cor-destaque-quality: #4caf50; /* Verde */
+
+    /* Cores para os botões */
+    --btn-primary-bg: #007bff;
+    --btn-primary-text: #FFFFFF;
+    --btn-secondary-bg: transparent;
+    --btn-secondary-text: #007bff;
+    --btn-secondary-border: #007bff;
+}
+
+body.dark-mode {
+    --cor-fundo: #121212;
+    --cor-fundo-secundario: #1e1e1e;
+    --cor-texto: #eeeeee;
+    --cor-titulo: #FFFFFF;
+    --cor-link: #4dabf7;
+    --cor-borda: #444444;
+    
+    /* Cores de Destaque no Dark Mode (ajuste de tonalidade se necessário) */
+    --cor-destaque-code: #837dff; 
+    --cor-destaque-rocket: #ffb74d; 
+    --cor-destaque-team: #26c6da; 
+    --cor-destaque-quality: #81c784; 
+
+    /* Cores dos botões no Dark Mode */
+    --btn-primary-bg: #4dabf7;
+    --btn-primary-text: #121212;
+    --btn-secondary-text: #4dabf7;
+    --btn-secondary-border: #4dabf7;
+}
+
+/* --- ESTILOS GERAIS --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto; /* Centraliza */
+    padding: 0 1rem;
+}
+
+section {
+    padding: 4rem 0; /* Espaçamento entre as seções */
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    color: var(--cor-titulo);
+}
+
+span {
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+a {
+    margin-top: 1rem;
+    color: var(--cor-texto);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- CABEÇALHO (Header) --- */
+header {
+    background-color: var(--cor-fundo-secundario);
+    border-bottom: 1px solid var(--cor-borda);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Garante que ele fique na frente */
+    transition: background-color 0.3s, border-bottom 0.3s;
+    justify-content: space-between;
+}
+
+/* === MODIFICAÇÃO PRINCIPAL PARA LAYOUT 3 COLUNAS === */
+/* Logo na Esquerda, Menu Centralizado, Botão na Direita */
+header nav.container {
+    display: flex;
+    justify-content: space-between; /* Espaça os 3 itens: Logo, Menu, Botão */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 1rem 1rem; /* Adiciona padding vertical ao header */
+}
+
+.logo {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* menu-links: Centralizado horizontalmente */
+.menu-links {
+    display: flex;
+    gap: 2rem;
+    /* Usa margens automáticas laterais para forçar o menu a ficar no centro */
+    /* Isso funciona porque o container tem justify-content: space-between */
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.menu-links a {
+    transition: color 0.3s ease;
+    font-weight: 500;
+    margin: 0; /* Remove margem lateral que estava sobrando */
+}
+
+.menu-links a:hover,
+.menu-links a:active{
+    color: var(--cor-link);
+}
+
+#dark-mode-toggle {
+    background: transparent;
+    border: none;
+    color: var(--cor-texto);
+    cursor: pointer;
+    font-size: 1.2rem;
+    /* Remove a margem lateral que estava bagunçando o alinhamento na direita */
+    margin-left: 0; 
+}
+
+
+/* --- SEÇÃO HERO (INÍCIO) --- */
+#hero {
+    background-color: var(--cor-fundo-secundario);
+    min-height: calc(100vh - 80px); /* 100% da altura - altura do header */
+    display: flex;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 3rem;
+}
+
+#hero h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.hero-links {
+    margin-top: 2rem;
+}
+
+/* --- ESTILO DA FOTO DE PERFIL --- */
+.profile-pic {
+    width: 150px; /* Largura da imagem */
+    height: 150px; /* Altura da imagem */
+    border-radius: 50%; /* Faz a imagem ficar redonda */
+    object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
+    border: 4px solid transparent; /* Borda colorida */
+    
+    /* Espaçamento ajustado */
+    margin-bottom: 1rem;
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transição para o dark mode */
+}
+
+body.dark-mode .profile-pic {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* --- ESTILO DOS BOTÕES (Reutilizável) --- */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    margin: 0 0.5rem;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    border: 1px solid var(--btn-primary-bg);
+}
+.btn-primary:hover {
+    opacity: 0.8;
+}
+
+.btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    border: 1px solid var(--btn-secondary-border);
+}
+.btn-secondary:hover {
+    background-color: var(--btn-secondary-border);
+    color: var(--cor-fundo);
+}
+
+/* --- SEÇÃO SOBRE (Layout de Duas Colunas e Cards) --- */
+#sobre {
+    background-color: var(--cor-fundo);
+    /* Remove text-align: center para alinhar o conteúdo principal à esquerda */
+    text-align: left; 
+    border-top: 1px solid var(--cor-borda);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* --- 1. ESTRUTURA DE DUAS COLUNAS (FLEXBOX) --- */
+.journey-layout {
+    display: flex;
+    gap: 50px; /* Espaçamento entre a coluna esquerda e a direita */
+    margin-top: 30px;
+    align-items: flex-start; /* Garante que as colunas se alinhem ao topo */
+}
+
+.journey-content-left {
+    flex: 2; /* Ocupa 2/3 do espaço (largura maior) */
+    padding: 30px;
+    min-width: 0; 
+}
+
+/* Reajusta o p para que o texto comece após o título da seção */
+#sobre p:first-of-type {
+    margin-top: 0;
+}
+
+/* Reajusta margens dos p's dentro da coluna esquerda */
+.journey-content-left p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.journey-content-right {
+    flex: 2; /* Ocupa 1/3 do espaço (largura menor) */
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column; /* Empilha os cards um sobre o outro */
+    gap: 50px; /* Espaço entre os cards */
+}
+
+/* --- 2. ESTILO DOS CARDS DE DESTAQUE (COLUNA DIREITA) --- */
+.info-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--cor-fundo);
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
+    border-left: 5px solid; /* Borda lateral para destaque */
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    margin-right: 15px;
+    color: var(--cor-fundo); /* Ícones brancos */
+    background-color: var(--cor-link); /* Cor padrão de fundo do ícone */
+}
+
+/* Cores de borda lateral e fundo do ícone */
+.info-card:nth-child(1) { 
+    border-left-color: var(--cor-link); 
+} 
+.info-card:nth-child(1) .icon-box {
+    background-color: var(--cor-link); 
+}
+
+.info-card:nth-child(2) { 
+    border-left-color: var(--cor-link); 
+}
+.info-card:nth-child(2) .icon-box {
+    background-color: var(--cor-link); 
+}
+
+.info-card:nth-child(3) { 
+    border-left-color: var(--cor-link); 
+}
+.info-card:nth-child(3) .icon-box {
+    background-color: var(--cor-link); 
+}
+
+.info-card:nth-child(4) { 
+    border-left-color: var(--cor-link); 
+}
+.info-card:nth-child(4) .icon-box {
+    background-color: vvar(--cor-link); 
+}
+
+
+.card-text h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    color: var(--cor-titulo);
+}
+
+.card-text p {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--cor-texto);
+    opacity: 0.8;
+}
+
+/* --- 3. ESTILO DAS TAGS DE COMPETÊNCIAS --- */
+.competencies-area h3, .competencies-area h4 {
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+.competencies-area h4 {
+    font-size: 1em;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.tag-group {
+    display: center;
+    flex-wrap: wrap; 
+    gap: 8px; 
+    margin-bottom: 15px;
+}
+
+.tag {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+/* Cores específicas para as tags */
+.tag-frontend {
+    background-color: var(--cor-link);
+    color: var(--cor-texto);
+}
+body.dark-mode .tag-frontend {
+    background-color: var(--cor-link);
+    color: var(--cor-texto);
+}
+
+.tag-backend {
+    background-color: var(--cor-link);
+    color: var(--cor-texto);
+}
+body.dark-mode .tag-backend {
+    background-color: var(--cor-link);
+    color: var(--cor-texto);
+}
+
+.tag-devops, .tag-erp {
+    background-color: var(--cor-link);
+    color: var(--cor-texto);
+}
+body.dark-mode .tag-devops, body.dark-mode .tag-erp {
+    background-color:var(--cor-link);
+    color: var(--cor-texto);
+}
+
+/* --- SEÇÃO Experiência Profissional ---*/
+#experiência {
+    background-color: var(--cor-fundo-secundario);
+    text-align: center;
+    border-top: 1px solid var(--cor-borda);
+}
+
+/* Ajustes de Alinhamento na Seção */
+#experiência .section-title, 
+#experiência .section-subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.section-subtitle {
+    margin-top: -1.5rem; /* Traz o subtítulo mais perto do título */
+    color: var(--cor-texto);
+    opacity: 0.8;
+}
+
+/* Container principal da Linha do Tempo */
+.timeline-container {
+    position: relative;
+    padding-left: 30px; /* Espaço para a linha vertical e os pontos */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* A LINHA VERTICAL: Usa o pseudo-elemento ::before no contêiner */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0; /* Posição da linha */
+    width: 2px;
+    background-color: var(--cor-borda); /* Cor da linha */
+}
+
+/* Estilo para cada Item da Timeline */
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* O CÍRCULO (PONTO) na linha: Usa o pseudo-elemento ::before em cada item */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -37px; /* Centraliza o círculo na linha vertical (Largura/2) */
+    top: 0px; /* Alinha o círculo com o topo do card */
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: var(--cor-fundo); /* Fundo do ponto (cor da página) */
+    border: 3px solid var(--cor-destaque-code); /* Borda do ponto (Cor de destaque) */
+    z-index: 5;
+}
+
+/* Estilo do Card de Conteúdo */
+.timeline-card {
+    background-color: var(--cor-fundo); /* Fundo branco/escuro do card */
+    padding: 25px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--cor-borda);
+    transition: all 0.3s ease;
+}
+
+.timeline-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+body.dark-mode .timeline-card {
+    box-shadow: none;
+    background-color: var(--cor-fundo-secundario);
+}
+body.dark-mode .timeline-card:hover {
+    border-color: var(--cor-destaque-code);
+}
+
+
+/* Títulos e Detalhes do Card */
+.job-title {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.company-name {
+    font-size: 1em;
+    color: var(--cor-link);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.company-name i {
+    margin-right: 5px;
+    color: var(--cor-link);
+}
+
+.job-description {
+    margin: 10px 0 20px 0;
+    color: var(--cor-texto);
+    opacity: 0.9;
+}
+
+.tech-title {
+    font-size: 0.8em;
+    font-weight: 600;
+    margin: 10px 0 10px 0;
+    color: var(--cor-titulo);
+    opacity: 0.7;
+}
+
+/* Badge de "Atual" */
+.badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.badge-current {
+    background-color: var(--cor-destaque-code); /* Roxo */
+    color: var(--cor-fundo);
+}
+
+/* Metadados (Data e Local) */
+.timeline-meta {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    text-align: right;
+    font-size: 0.7em;
+    color: var(--cor-texto);
+    opacity: 0.8;
+}
+
+.timeline-meta span {
+    display: block;
+    margin: 0;
+}
+.timeline-meta i {
+    margin-right: 5px;
+    width: 15px; /* Garante alinhamento vertical */
+}
+
+/* --- SEÇÃO PROJETOS --- */
+#projetos {
+    background-color: var(--cor-fundo);
+    text-align: center;
+    border-top: 1px solid var(--cor-borda);
+}
+
+/* --- SEÇÃO PROJETOS (Cards) --- */
+.projetos-grid {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem; /* Espaçamento entre os cards */
+}
+
+.card {
+    background-color: var(--cor-fundo-secundario);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    overflow: hidden; /* Garante que a imagem não "vaze" */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card h3, .card p, .card a {
+    padding: 0 1.5rem;
+}
+
+.card h3 {
+    margin-top: 1rem;
+}
+
+.card a {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.card img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Faz a imagem cobrir o espaço sem distorcer */
+}
+
+/* --- SEÇÃO CONTATO --- */
+#contato {
+    background-color: var(--cor-fundo-secundario);
+    text-align: center;
+    border-top: 1px solid var(--cor-borda);
+}
+
+.contato-links {
+    margin-top: 2rem;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid var(--cor-borda);
+    font-size: 0.9rem;
+}
+
+/*
+ * =========================================
+ * ESTILOS RESPONSIVOS (MEDIA QUERIES)
+ * =========================================
+*/
+
+/*
+ * --- Para Telas Médias (Tablets, até 960px de largura) ---
+*/
+@media (max-width: 960px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+
+/*
+ * --- Para Telas Médias (Tablets, até 768px de largura) ---
+*/
+@media (max-width: 768px) {
+    
+    /* Layout de Duas Colunas -> Empilhamento em Mobile */
+    .journey-layout {
+        flex-direction: column; 
+        gap: 30px;
+    }
+
+    .journey-content-left, .journey-content-right {
+        flex: auto; 
+    }
+
+    /* Navbar em telas menores */
+    header nav.container {
+        flex-direction: column; 
+        padding: 1rem;
+    }
+
+    .menu-links {
+        margin-top: 1rem;
+        width: 100%; 
+        text-align: center;
+        display: flex; 
+        justify-content: center; 
+        flex-wrap: wrap;
+        margin-left: 0; 
+        margin-right: 0;
+    }
+
+    .menu-links a {
+        margin: 0.5rem 0.8rem; 
+    }
+
+    #dark-mode-toggle {
+        margin-top: 0.5rem; 
+        margin-left: 0;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem; 
+    }
+
+    #hero h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-links .btn {
+        margin: 0.5rem;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+
+    .projetos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    }
+
+    .timeline-container {
+        padding-left: 20px;
+    }
+    .timeline-container::before {
+        left: 0;
+    }
+    .timeline-item::before {
+        left: -4px;
+    }
+
+    .timeline-meta {
+        position: static; /* Sai da posição absoluta */
+        text-align: left;
+        margin-bottom: 10px;
+        border-bottom: 1px dashed var(--cor-borda);
+        padding-bottom: 5px;
+    }
+
+    .timeline-meta span {
+        display: inline-block; /* Coloca data e local lado a lado */
+        margin-right: 15px;
+    }
+}
+
+/*
+ * --- Para Telas Pequenas (Celulares, até 576px de largura) ---
+*/
+@media (max-width: 576px) {
+    .container {
+        padding: 0 0.8rem; 
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .menu-links {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .menu-links a {
+        margin: 0.3rem 0; 
+    }
+
+    #hero h1 {
+        font-size: 2rem; 
+    }
+
+    #hero h2 {
+        font-size: 1rem;
+    }
+
+    .hero-links {
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 80%; 
+        text-align: center;
+        margin-bottom: 0.8rem; 
+    }
+    .btn:last-child {
+        margin-bottom: 0;
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 0.8rem; 
+    }
+
+    .projetos-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .card img {
+        height: 180px; 
+    }
+}
