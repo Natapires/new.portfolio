@@ -1,63 +1,62 @@
 # Portfólio — Natã Pires
 
-Portfólio pessoal de Natã Pires, com apresentação profissional, experiência, projetos freelance e formas de contato.
+Site pessoal para apresentar minha atuação profissional, experiência, projetos de desenvolvimento e formas de contato.
 
-A interface oferece temas claro e escuro, segue a preferência do sistema na primeira visita e salva a escolha feita pelo visitante.
-Os projetos são exibidos em um carrossel manual com setas e indicadores, compatível com teclado e telas pequenas.
-O formulário de integração de projetos, currículo e WhatsApp fica em `site-config.js`; os links opcionais só aparecem quando os dados necessários forem preenchidos.
+**Site:** [natapiresdev.vercel.app](https://natapiresdev.vercel.app/)
 
-## Tecnologias
+## Sobre o site
 
-- HTML semântico
-- CSS responsivo
-- JavaScript nativo
+- Layout responsivo feito com HTML semântico, CSS e JavaScript nativo.
+- Temas claro e escuro, com preferência salva no navegador.
+- Navegação entre seções sem recarregar a página.
+- Navegação pelas seções com âncoras (`#sobre`, `#experiencia`, `#projetos` e `#contato`).
+- Carrossel de projetos com controles por teclado e toque.
+- Links de currículo e WhatsApp exibidos quando configurados.
 
-O projeto não requer instalação de dependências nem etapa de build. Para visualizar, abra `index.html` no navegador ou publique os arquivos em um serviço de hospedagem estática.
+## Visualizar localmente
 
-## Navegação por endereço
+O projeto não requer dependências nem etapa de build. Abra `index.html` no navegador ou use a extensão Live Server do VS Code. Os links para as seções usam fragmentos (`#sobre`, `#projetos` etc.), que são tratados pelo navegador e não exigem regras especiais no servidor; assim, atualizar a página não gera erro `Cannot GET` nessas seções.
 
-As seções podem ser acessadas por caminhos como `/sobre`, `/experiencia`, `/projetos` e `/contato`, sem fragmentos `#`. O `vercel.json` encaminha esses caminhos para `index.html`, permitindo abrir ou atualizar cada endereço diretamente na hospedagem Vercel.
+## Publicação
 
-## Configurações a preencher
+O site pode ser publicado como um projeto estático, sem comando de build. As âncoras funcionam em hospedagens estáticas comuns sem configuração adicional. Na Vercel, `vercel.json` também mantém disponíveis caminhos diretos como `/sobre` e `/projetos`.
 
-Edite `site-config.js`:
+## Configuração do site
 
-- `siteUrl`: domínio público completo do portfólio, começando com `https://` (configurado como `https://natapiresdev.com.br/`).
-- `socialImageUrl`: URL pública HTTPS da imagem para previews sociais. Se ficar vazio e `siteUrl` for informado, a foto `assets/images/Nata.png` será usada.
-- `resumeUrl`: caminho do PDF dentro do site. Já está configurado para o currículo atual em `assets/`.
-- `whatsappNumber`: número com código do país e DDD, somente dígitos. O botão só aparece com um número válido (já configurado).
-- `projects.sabrina.url`: endereço HTTPS da landing page (já configurado).
-- `projects.sabrina.repositoryUrl`: repositório HTTPS, se puder ser divulgado (opcional).
-- `projects.sabrina.image`: caminho relativo da captura de tela ou URL HTTPS da imagem do projeto.
-- `projects.sabrina.description`: resumo curto do projeto.
-- `projects.sabrina.role`: sua participação no desenvolvimento.
-- `projects.sabrina.challenge`: necessidade ou desafio que o projeto resolveu.
-- `projects.sabrina.technologies`: tecnologias efetivamente usadas, em uma lista de textos. Não inclua ferramentas que não fizeram parte do projeto.
+Edite `site-config.js` para ajustar as integrações:
 
-O case da Sabrina só é adicionado ao carrossel quando URL, imagem, resumo, atuação e desafio estiverem preenchidos. Os links de currículo e WhatsApp também permanecem ocultos até serem configurados.
+| Propriedade | Uso |
+| --- | --- |
+| `siteUrl` | URL pública do portfólio, usada nos metadados e links canônicos. |
+| `socialImageUrl` | Imagem para previews sociais. Se estiver vazia, é usada `assets/images/Nata.png`. |
+| `resumeUrl` | Caminho do PDF do currículo dentro do site. |
+| `whatsappNumber` | Número com código do país e DDD, somente dígitos. |
+| `projects.sabrina.url` | Endereço público da landing page da Sabrina. |
+| `projects.sabrina.repositoryUrl` | Repositório do projeto, se puder ser divulgado. |
+| `projects.sabrina.image` | Caminho ou URL da imagem usada no cartão do projeto. |
+| `projects.sabrina.description` | Descrição curta do projeto. |
+| `projects.sabrina.role` | Atuação no desenvolvimento. |
+| `projects.sabrina.challenge` | Desafio ou objetivo do projeto. |
+| `projects.sabrina.technologies` | Lista das tecnologias usadas. |
 
-Para compatibilidade com geradores de preview que não executam JavaScript, depois de publicar, copie o domínio final para `siteUrl` e atualize `og:url` e `og:image` no `<head>` de `index.html` com URLs absolutas HTTPS do site e da imagem.
+O cartão da Sabrina só aparece quando seus campos obrigatórios estão preenchidos. Os projetos apresentados diretamente no HTML são editados em `index.html`.
 
-## Projetos em destaque
+Ao alterar o domínio do site ou a imagem de preview, atualize também os metadados correspondentes no `<head>` de `index.html`, para que previews gerados sem executar JavaScript mostrem as informações corretas.
 
-- [Dra. Beatriz Cardoso](https://drabeatrizcardoso.vercel.app/) — página de links para agendamento, pedidos e loja.
-- [Plann.er API](https://github.com/Natapires/Plann.er) — API para gerenciamento de viagens.
-- Gerenciador de clientes e ambientes — painel para organizar ambientes e acompanhar tarefas, acessos e tickets.
-- [Landing page Sabrina Duarte](https://sabrinaduarte.vercel.app/) — página de serviços, valores e inspirações com contato pelo WhatsApp.
+## Estrutura principal
+
+```text
+.
+├── assets/       # Imagens, ícone e currículo
+├── index.html    # Conteúdo e cartões dos projetos estáticos
+├── script.js     # Navegação, tema, carrossel e integrações
+├── site-config.js
+├── style.css     # Estilos responsivos e temas
+└── vercel.json   # Regras das URLs amigáveis na Vercel
+```
 
 ## Contato
 
 - [GitHub](https://github.com/Natapires)
 - [LinkedIn](https://www.linkedin.com/in/natapiresferreira/)
 - [E-mail](mailto:pires.nata1998@gmail.com)
-
-## Teste rápido com usuários
-
-Compartilhe a página em um celular e peça a duas pessoas para navegar sem orientação. Pergunte:
-
-1. Ficou claro com o que trabalho e que tipo de projeto freelance faço?
-2. Você conseguiu encontrar um projeto e abrir o site ou o código dele?
-3. Foi fácil encontrar uma forma de entrar em contato?
-4. Algo ficou difícil de ler ou usar no celular?
-
-Anote as dificuldades observadas e ajuste primeiro os problemas que se repetirem.

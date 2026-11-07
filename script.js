@@ -22,23 +22,6 @@ const parseUrl = (value, { allowRelative = false } = {}) => {
     }
 };
 
-const sectionRoutes = new Map([
-    ["/", "inicio"],
-    ["/inicio", "inicio"],
-    ["/conteudo", "conteudo"],
-    ["/sobre", "sobre"],
-    ["/experiencia", "experiencia"],
-    ["/projetos", "projetos"],
-    ["/contato", "contato"]
-]);
-
-const normalizePath = (path) => path.length > 1 ? path.replace(/\/+$/, "") : path;
-
-const getSectionForPath = (path) => {
-    const sectionId = sectionRoutes.get(normalizePath(path));
-    return sectionId ? document.getElementById(sectionId) : null;
-};
-
 const setMetaContent = (selector, content) => {
     if (!content) {
         return;
@@ -53,92 +36,6 @@ const setMetaContent = (selector, content) => {
 const siteUrl = parseUrl(portfolioConfig.siteUrl);
 const socialImageUrl = parseUrl(portfolioConfig.socialImageUrl)
     ?? (siteUrl ? new URL("assets/images/Nata.png", siteUrl) : null);
-
-const updateRouteMetadata = (path) => {
-    if (!siteUrl) {
-        return;
-    }
-
-    const canonicalUrl = new URL(normalizePath(path), siteUrl);
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-        canonical = document.createElement("link");
-        canonical.rel = "canonical";
-        document.head.append(canonical);
-    }
-    canonical.href = canonicalUrl.href;
-    setMetaContent('meta[property="og:url"]', canonicalUrl.href);
-};
-
-if (siteUrl) {
-    const routePath = sectionRoutes.has(normalizePath(window.location.pathname))
-        ? normalizePath(window.location.pathname)
-        : "/";
-    updateRouteMetadata(routePath);
-}
-
-const navigateToPath = (path, { focus = false, behavior = "smooth" } = {}) => {
-    const normalizedPath = normalizePath(path);
-    const target = getSectionForPath(normalizedPath);
-    if (!target) {
-        return false;
-    }
-
-    if (window.location.protocol !== "file:" && window.location.pathname !== normalizedPath) {
-        window.history.pushState(null, "", normalizedPath);
-    }
-    updateRouteMetadata(normalizedPath);
-    if (focus) {
-        target.focus({ preventScroll: true });
-    }
-    target.scrollIntoView({ behavior, block: "start" });
-    return true;
-};
-
-const initialPath = normalizePath(window.location.pathname);
-if (sectionRoutes.has(initialPath)) {
-    if (window.location.protocol !== "file:" && window.location.pathname !== initialPath) {
-        window.history.replaceState(null, "", initialPath);
-    }
-    if (initialPath !== "/") {
-        getSectionForPath(initialPath)?.scrollIntoView({ behavior: "auto", block: "start" });
-    }
-}
-
-document.addEventListener("click", (event) => {
-    if (!(event.target instanceof Element)) {
-        return;
-    }
-    const link = event.target.closest("a[href]");
-    if (
-        !link
-        || event.defaultPrevented
-        || event.button !== 0
-        || event.metaKey
-        || event.ctrlKey
-        || event.shiftKey
-        || event.altKey
-        || (link.target && link.target !== "_self")
-        || link.hasAttribute("download")
-    ) {
-        return;
-    }
-
-    const url = new URL(link.href, window.location.href);
-    const path = normalizePath(url.pathname);
-    if (url.origin !== window.location.origin || !sectionRoutes.has(path)) {
-        return;
-    }
-
-    event.preventDefault();
-    navigateToPath(path, { focus: link.classList.contains("skip-link") });
-});
-
-window.addEventListener("popstate", () => {
-    const path = normalizePath(window.location.pathname);
-    getSectionForPath(path)?.scrollIntoView({ behavior: "auto", block: "start" });
-    updateRouteMetadata(path);
-});
 
 if (socialImageUrl) {
     setMetaContent('meta[property="og:image"]', socialImageUrl.href);
