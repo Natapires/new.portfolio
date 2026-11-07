@@ -9,17 +9,17 @@ Site pessoal para apresentar minha atuação profissional, experiência, projeto
 - Layout responsivo feito com HTML semântico, CSS e JavaScript nativo.
 - Temas claro e escuro, com preferência salva no navegador.
 - Navegação entre seções sem recarregar a página.
-- Navegação pelas seções com âncoras (`#sobre`, `#experiencia`, `#projetos` e `#contato`).
+- Navegação pelas seções com URLs limpas: `/sobre`, `/experiencia`, `/projetos` e `/contato`.
 - Carrossel de projetos com controles por teclado e toque.
 - Links de currículo e WhatsApp exibidos quando configurados.
 
 ## Visualizar localmente
 
-O projeto não requer dependências nem etapa de build. Abra `index.html` no navegador ou use a extensão Live Server do VS Code. Os links para as seções usam fragmentos (`#sobre`, `#projetos` etc.), que são tratados pelo navegador e não exigem regras especiais no servidor; assim, atualizar a página não gera erro `Cannot GET` nessas seções.
+O projeto não requer dependências nem etapa de build. Abra `index.html` no navegador para ver a página. O Live Server não aplica o `vercel.json`; portanto, ao testar nele, as URLs das seções podem não funcionar ao recarregar ou abrir diretamente. Teste os caminhos limpos na implantação da Vercel ou com um servidor configurado para reescrevê-los.
 
 ## Publicação
 
-O site pode ser publicado como um projeto estático, sem comando de build. As âncoras funcionam em hospedagens estáticas comuns sem configuração adicional. Na Vercel, `vercel.json` também mantém disponíveis caminhos diretos como `/sobre` e `/projetos`.
+O site pode ser publicado como um projeto estático, sem comando de build. Na Vercel, `vercel.json` encaminha as URLs das seções para `index.html`, permitindo navegar, abrir diretamente e recarregar endereços como `/sobre` e `/projetos`.
 
 ## Configuração do site
 
