@@ -1,0 +1,11 @@
+{
+    "trailingSlash": false,
+    "rewrites": [
+        { "source": "/inicio", "destination": "/index.html" },
+        { "source": "/conteudo", "destination": "/index.html" },
+        { "source": "/sobre", "destination": "/index.html" },
+        { "source": "/experiencia", "destination": "/index.html" },
+        { "source": "/projetos", "destination": "/index.html" },
+        { "source": "/contato", "destination": "/index.html" }
+    ]
+}

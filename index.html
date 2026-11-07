@@ -1,267 +1,301 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natã Pires. | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111210">
+    <meta name="description" content="Portfólio de Natã Pires, desenvolvedor de software com atuação em Protheus, AdvPL e projetos web.">
+    <title>Natã Pires — Desenvolvedor de Software</title>
+    <meta property="og:title" content="Natã Pires — Desenvolvedor de Software">
+    <meta property="og:description" content="Conheça o trabalho de Natã Pires: desenvolvimento de software, soluções web, Protheus e projetos freelance.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Natã Pires — Portfólio">
+    <meta property="og:url" content="https://natapiresdev.com.br/">
+    <meta property="og:image" content="https://natapiresdev.com.br/assets/images/Nata.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Natã Pires — Desenvolvedor de Software">
+    <meta name="twitter:description" content="Desenvolvimento de software, soluções web, Protheus e projetos freelance.">
+    <meta name="twitter:image" content="https://natapiresdev.com.br/assets/images/Nata.png">
+    <link rel="canonical" href="https://natapiresdev.com.br/">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="site-config.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="/conteudo">Pular para o conteúdo</a>
 
-    <header>
-        <nav class="container">
-            <h1><a href="#" class="logo">Natã Pires</a></h1>
-            
-            <div class="menu-links">
-                <a href="#hero">Início</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#experiência">Experiência</a>
-                <a href="#projetos">Projetos</a>
-                <a href="#contato">Contato</a>
+    <header class="site-header">
+        <nav class="container nav-bar" aria-label="Navegação principal">
+            <a class="wordmark" href="/" aria-label="Natã Pires, início">NP<span>.</span></a>
+
+            <div class="nav-links" id="menu-principal">
+                <a href="/sobre">Sobre</a>
+                <a href="/experiencia">Experiência</a>
+                <a href="/projetos">Projetos</a>
+                <a class="nav-contact" href="/contato">Vamos conversar <span aria-hidden="true">↗</span></a>
             </div>
-            
-            <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
 
+            <div class="nav-controls">
+                <button class="theme-toggle" type="button" aria-label="Ativar tema claro" title="Ativar tema claro">
+                    <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+                    </svg>
+                    <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.2 15.3A8.5 8.5 0 0 1 8.7 3.8 8.5 8.5 0 1 0 20.2 15.3Z"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section id="hero">
-            <div class="container hero-content">
-                <img src="./assets/images/avatar.png" alt="Foto Natã Pires" class="profile-pic">
-                <h2>Natã Pires</h2>
-                <span class="btn btn-primary">Software Developer</span>
-                <p>Back-End Developer focado em construir produtos digitais completos, tanto para plataformas web, quanto mobile. Atuo hoje com tecnologias modernas e escaláveis, como JavaScript, C#, .NET
-                    e venho me capacitando em Advpl (Protheus) e .NET Maui.
-                </p>
-                <div class="hero-links">
-                    <a href="https://github.com/Natapires" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="https://www.linkedin.com/in/natapiresferreira/" target="_blank" class="btn btn-secondary">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="sobre">
-            <div class="container">
-
-                <h2 class="section-title">Sobre Mim</h2>
-                <p class="journey-layout">Desenvolvedor apaixonado por tecnologia e pelo o que faz, com +1 ano de experiência criando soluções inovadoras e escaláveis.</p>
-                
-                <!-- Contêiner Flex/Grid para as Duas Colunas-->
-                <div class="journey-layout">
-
-                    <!--COLUNA A ESQUERDA: Texto e Competências-->
-                    <div class="journey-content-left">
-
-                        <h3>Minha Jornada</h3>
-
-                        <p>Comecei minha trajetória na tecnologia em 2020, iniciando meus estudos em programação e evoluindo rapidamente na área. Desde então, direcionei meu foco para o desenvolvimento com C# e .NET, atuando também como DevOps Engineer em 2023. Atualmente, trabalho na Totvs como Técnico de Implantação, onde continuo expandindo minhas habilidades e participando de projetos desafiadores.</p>
-                        
-                        <p>Sou apaixonado por criar soluções que entreguem uma ótima experiência ao usuário e estou sempre aprendendo novas tecnologias e ferramentas.</p>
-
-                        <h3>Principais Competências</h3>
-
-                        <div class="competencies-area">
-                            
-                            <h4>Frontend</h4>
-                            <div class="tag-group">
-                                <span class="tag tag-frontend">HTML</span>
-                                <span class="tag tag-frontend">CSS</span>
-                                <span class="tag tag-frontend">JavaScript</span>
-                            </div>
-
-                            <h4>Backend</h4>
-                            <div class="tag-group">
-                                <span class="tag tag-backend">C#</span>
-                                <span class="tag tag-backend">.NET</span>
-                                <span class="tag tag-backend">Python</span>
-                            </div>
-
-                            <h4>DevOps & Cloud</h4>
-                            <div class="tag-group">
-                                <span class="tag tag-devops">Azure</span>
-                                <span class="tag tag-devops">AWS</span>
-                                <span class="tag tag-devops">Docker</span>
-                            </div>
-
-                            <h4>ERP</h4>
-                            <div class="tag-group">
-                                <span class="tag tag-devops">Protheus</span>
-                                <span class="tag tag-backend">Advpl</span>
-                            </div>
-                        </div>       
+    <main id="conteudo" tabindex="-1">
+        <section class="hero section-shell" id="inicio">
+            <div class="container hero-layout">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span class="status-dot"></span> Desenvolvedor de software · Brasil</p>
+                    <h1>Construo soluções digitais <span>com propósito.</span></h1>
+                    <p class="hero-intro">Sou Natã Pires. Hoje trabalho com implantação de sistemas Protheus e desenvolvimento em AdvPL. Também crio projetos web e busco novos desafios em engenharia de software e desenvolvimento backend com .NET.</p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="/projetos">Conheça meu trabalho <span aria-hidden="true">↘</span></a>
+                        <a class="text-link" href="mailto:pires.nata1998@gmail.com">Entrar em contato <span aria-hidden="true">↗</span></a>
                     </div>
-
-                    <!-- COLUNA DIREITA: Cards de Destaque -->
-                    <div class="journey-content-right">
-                        
-                        <!-- Card 1: Back End Developer -->
-                        <div class="info-card">
-                            <div class="icon-box icon-code">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="card-text">
-                                <h4>Back End Developer</h4>
-                                <p>Especializando em tecnologias modernas como C#, .NET e Python</p>
-                            </div>
-                        </div>
-
-                    <!-- Card 2: Experiência Enterprise -->
-                    <div class="info-card">
-                        <div class="icon-box icon-rocket">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <div class="card-text">
-                            <h4>Experiência Enterprise</h4>
-                            <p>Trabalha em uma empresa de destaque: TOTVS</p>
-                        </div>
-                    </div>
-
-                    <!-- Card 3: Trabalho em Equipe -->
-                    <div class="info-card">
-                        <div class="icon-box icon-team">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="card-text">
-                            <h4>Trabalho em Equipe</h4>
-                            <p>Experiência em times multidisciplinares e metodologias ágeis</p>
-                        </div>
-                    </div>
-
-                    <!-- Card 4: Foco em Qualidade -->
-                    <div class="info-card">
-                        <div class="icon-box icon-quality">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <div class="card-text">
-                            <h4>Foco em Qualidade</h4>
-                            <p>Comprometido com código limpo, escalabilidade e boas práticas</p>
-                        </div>
-                    </div>
-
-                </div>   
-            </div>
-        </section>
-
-        <!-- NOVO CONTEÚDO PARA EXPERIÊNCIA PROFISSIONAL -->
-        <section id="experiência">
-            <div class="container">
-                <h2 class="section-title">Experiência Profissional</h2>
-                <p class="section-subtitle">Minha jornada profissional através de empresas inovadoras e projetos desafiadores.</p>
-
-                <!-- CONTAINER PRINCIPAL DA LINHA DO TEMPO -->
-                <div class="timeline-container">
-
-                    <!-- ITEM 1: Técnico de Implantação (TOTVS) - ATUAL -->
-                    <div class="timeline-item">
-                        <!-- Card de Conteúdo -->
-                        <div class="timeline-card">
-                                                    <!-- Data e Local (Flutuam para a direita no desktop) -->
-                        <div class="timeline-meta">
-                            <span><i class="fas fa-calendar-alt"></i> May 2025 - Presente</span>
-                            <span><i class="fas fa-map-marker-alt"></i> São Paulo, SP - Híbrida</span>
-                        </div>
-
-                            <h3 class="job-title">Técnico de Implantação</h3>
-                            <p class="company-name"><i class="fas fa-building"></i> TOTVS <span class="badge badge-current">Atual</span></p>
-                            
-                            <p class="job-description">
-                                Atuo na implementação e customização de sistemas ERP (Protheus), realizando análises técnicas e desenvolvendo soluções em Advpl para atender às necessidades específicas dos clientes.
-                            </p>
-
-                            <h4 class="tech-title">Principais Tecnologias:</h4>
-                            <div class="tag-group">
-                                <span class="tag tag-backend">Advpl</span>
-                                <span class="tag tag-devops">Protheus</span>
-                                <span class="tag tag-backend">SQL Server</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- ITEM 2: DevOps Engineer (Empresa 2) -->
-                    <div class="timeline-item">
-                        <div class="timeline-card">
-                            <div class="timeline-meta">
-                                <span><i class="fas fa-calendar-alt"></i> Abril 2023 - Jan 2024</span>
-                                <span><i class="fas fa-map-marker-alt"></i> Mogi das Cruzes, SP - Presencial</span>
-                            </div>
-                            <h3 class="job-title">Estágio DevOps Engineer</h3>
-                            <p class="company-name"><i class="fas fa-building"></i> Cloud Dog</p>
-                            
-                            <p class="job-description">
-                                Responsável por otimizar pipelines de CI/CD, gerenciar infraestrutura em nuvem (AWS) e implementar monitoramento para garantir a estabilidade e a escalabilidade das aplicações.
-                            </p>
-
-                            <h4 class="tech-title">Principais Tecnologias:</h4>
-                            <div class="tag-group">
-                                <span class="tag tag-devops">AWS</span>
-                                <span class="tag tag-devops">Docker</span>
-                                <span class="tag tag-backend">Python</span>
-                            </div>
-                        </div>
+                    <div class="hero-socials" aria-label="Redes profissionais">
+                        <a href="https://github.com/Natapires" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                        <a href="https://www.linkedin.com/in/natapiresferreira/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
                     </div>
                 </div>
+
+                <div class="hero-portrait">
+                    <div class="portrait-frame">
+                        <img src="assets/images/Nata.png" alt="Natã Pires, desenvolvedor de software" width="400" height="400" decoding="async" fetchpriority="high">
+                    </div>
+                    <div class="portrait-note">
+                        <span class="note-mark" aria-hidden="true">✳</span>
+                        <span>Aberto a projetos<br>freelance</span>
+                    </div>
+                    <span class="hero-index" aria-hidden="true">01 / 04</span>
+                </div>
+            </div>
+            <div class="hero-bottom container">
+                <span>Protheus · AdvPL · .NET · Web</span>
+                <a href="/sobre">Role para explorar <span aria-hidden="true">↓</span></a>
             </div>
         </section>
-        <!-- FIM DO NOVO CONTEÚDO PARA EXPERIÊNCIA PROFISSIONAL -->
 
-        <section id="projetos">
+        <section class="section section-about" id="sobre">
             <div class="container">
-                <h2>Meus Projetos</h2>
-                <p>
-                    Alguns dos projetos que desenvolvi, demonstrando algumas tecnologias e <br>soluções para problemas complexos.<br>
-                </p>
-                <div class="projetos-grid">
-                    
-                    <div class="card">
-                        <img src=".//assets/images/projetoapi.png" alt="Imagem de um projeto de API">
-                        <h3>Plann.er API</h3>
-                        <p>
-                            Esse projeto foi feito com o foco em agendamento de viagens, consulta, atualização e exclusão de reserva de viagem.
-                        </p>
-                        <a href="https://github.com/Natapires/Plann.er" target="_blank">Ver Código</a>
-                        <a href="https://github.com/Natapires" target="_blank">Acesse outros projetos</a>
+                <div class="section-heading">
+                    <p class="eyebrow">01 — Um pouco sobre mim</p>
+                    <h2>Tecnologia boa é aquela que <span>resolve de verdade.</span></h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-copy">
+                        <p>Minha jornada na programação começou em 2020. Desde então, venho explorando diferentes áreas da tecnologia — de infraestrutura e DevOps ao desenvolvimento de sistemas e soluções web.</p>
+                        <p>Atualmente, trabalho como Técnico de Implantação na TOTVS, com sistemas Protheus. No dia a dia, atuo com análise de necessidades, implantação e customizações em AdvPL. Fora do trabalho, desenvolvo projetos freelance e sigo aprofundando meus conhecimentos em C# e .NET.</p>
+                        <p>Gosto de entender o problema antes de pensar na solução. Isso vale tanto para um sistema interno quanto para o site de um negócio que precisa se apresentar melhor na internet.</p>
+                        <a class="text-link" href="/contato">Tem um projeto em mente? <span aria-hidden="true">↗</span></a>
                     </div>
-                    
-                    <div class="card">
-                        <img src=".//assets/images/projetodrabeatriz.png" alt="Imagem do site da Dra Beatriz">
-                        <h3>Projeto Dra Beatriz Cardoso</h3>
-                        <p>
-                            O projeto é focado em links de direcionamento para agendamento de consulta, e compras diretamento no whatsapp da Dra Beatriz.
-                        </p>
-                        <a href="https://drabeatrizcardoso.vercel.app/" target="_blank">Acessar site</a>
+
+                    <aside class="about-aside" aria-label="Resumo profissional">
+                        <div class="aside-item">
+                            <span class="aside-number">01</span>
+                            <div>
+                                <h3>Atuação hoje</h3>
+                                <p>Implantação e customização de ERP Protheus na TOTVS.</p>
+                            </div>
+                        </div>
+                        <div class="aside-item">
+                            <span class="aside-number">02</span>
+                            <div>
+                                <h3>O que busco</h3>
+                                <p>Oportunidades em engenharia de software, desenvolvimento web e backend com .NET.</p>
+                            </div>
+                        </div>
+                        <div class="aside-item">
+                            <span class="aside-number">03</span>
+                            <div>
+                                <h3>Freelance</h3>
+                                <p>Sites, portfólios para vendas e microsistemas sob medida.</p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="skills">
+                    <p class="eyebrow">Ferramentas e tecnologias</p>
+                    <div class="skill-list" aria-label="Tecnologias">
+                        <span>C#</span><span>.NET</span><span>AdvPL</span><span>Protheus</span>
+                        <span>JavaScript</span><span>HTML &amp; CSS</span><span>Python</span>
+                        <span>SQL Server</span><span>AWS</span><span>Docker</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contato">
+        <section class="section section-experience" id="experiencia">
             <div class="container">
-                <h2>Vamos Conversar?</h2>
-                <p>Estou disponível para discutir novos projetos, oportunidades criativas ou <br>
-                    conversar sobre tecnologia e IA.<br></p>
-                <div class="contato-links">
-                    <a href="mailto:pires.nata1998@gmail.com" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i> Enviar Email
-                    </a>
-                    <a href="seu-curriculo.pdf" download="Curriculo_Natã_Pires.pdf" class="btn btn-secondary">
-                        <i class="fas fa-download"></i> Baixar meu CV
-                    </a>
+                <div class="section-heading section-heading-row">
+                    <div>
+                        <p class="eyebrow">02 — Caminho profissional</p>
+                        <h2>Experiência <span>na prática.</span></h2>
+                    </div>
+                    <p class="heading-note">Aprendizado contínuo, colaboração e tecnologia aplicada a desafios reais.</p>
+                </div>
+
+                <div class="experience-list">
+                    <article class="experience-item">
+                        <div class="experience-date">Mai. 2025 — atual</div>
+                        <div class="experience-detail">
+                            <div class="experience-title">
+                                <div>
+                                    <h3>Analista Técnico Protheus</h3>
+                                    <p class="experience-company">Totvs <span class="current-label">Atual</span></p>
+                                </div>
+                                <span class="experience-arrow" aria-hidden="true">↗</span>
+                            </div>
+                            <p>Atuação na implementação e customização de sistemas ERP Protheus, com análise técnica e desenvolvimento em AdvPL para atender às necessidades dos clientes.</p>
+                            <div class="tag-list"><span>AdvPL</span><span>Protheus</span><span>SQL Server</span><span>iPaaS</span></div>
+                        </div>
+                    </article>
+
+                    <article class="experience-item">
+                        <div class="experience-date">Abr. 2023 — jan. 2024</div>
+                        <div class="experience-detail">
+                            <div class="experience-title">
+                                <div>
+                                    <h3>DevOps Engineer Jr.</h3>
+                                    <p class="experience-company">Cloud Dog</p>
+                                </div>
+                                <span class="experience-arrow" aria-hidden="true">↗</span>
+                            </div>
+                            <p>Experiência com pipelines de CI/CD, infraestrutura em nuvem e monitoramento de aplicações, contribuindo para a estabilidade e a escalabilidade dos serviços.</p>
+                            <div class="tag-list"><span>AWS</span><span>Docker</span><span>Python</span></div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
+        <section class="section section-projects" id="projetos">
+            <div class="container">
+                <div class="section-heading section-heading-row">
+                    <div>
+                        <p class="eyebrow">03 — Alguns projetos</p>
+                        <h2>Ideias que viraram <span>produto.</span></h2>
+                    </div>
+                    <a class="text-link" href="https://github.com/Natapires" target="_blank" rel="noreferrer">Mais projetos no GitHub <span aria-hidden="true">↗</span></a>
+                </div>
+
+                <div class="projects-carousel" id="projects-carousel" role="region" aria-label="Carrossel de projetos" aria-roledescription="carrossel" tabindex="0">
+                    <div class="carousel-viewport">
+                        <div class="carousel-track">
+                            <article class="project-card project-slide" role="group" aria-roledescription="slide" aria-label="1 de 2" aria-hidden="false">
+                                <a class="project-image" href="https://drabeatrizcardoso.vercel.app/" target="_blank" rel="noreferrer" aria-label="Visitar o site da Dra. Beatriz Cardoso">
+                                    <img src="assets/images/projetodrabeatriz.png" alt="Página de links da Dra. Beatriz Cardoso, com opções para agendamento e contato" width="1486" height="755" loading="lazy" decoding="async">
+                                    <span class="image-link" aria-hidden="true">↗</span>
+                                </a>
+                                <div class="project-info">
+                                    <div class="project-meta"><span>Freelance</span><span>01 / 02</span></div>
+                                    <h3>Dra. Beatriz Cardoso</h3>
+                                    <p>Uma página direta para reunir links de agendamento, pedidos e loja, facilitando o contato dos pacientes com a profissional.</p>
+                                    <dl class="project-case">
+                                        <div><dt>Atuação</dt><dd>Desenvolvimento freelance de uma página para centralizar os principais links da profissional.</dd></div>
+                                        <div><dt>Objetivo</dt><dd>Facilitar o acesso a agendamentos, pedidos e loja em um só lugar.</dd></div>
+                                    </dl>
+                                    <div class="project-footer">
+                                        <div class="tag-list"><span>Web</span><span>Landing page</span></div>
+                                        <a href="https://drabeatrizcardoso.vercel.app/" target="_blank" rel="noreferrer">Ver site <span aria-hidden="true">↗</span></a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="project-card project-slide" role="group" aria-roledescription="slide" aria-label="2 de 2" aria-hidden="true" inert>
+                                <a class="project-image project-image-api" href="https://github.com/Natapires/Plann.er" target="_blank" rel="noreferrer" aria-label="Ver o código da API Plann.er no GitHub">
+                                    <img src="assets/images/projetoapi.png" alt="Documentação da API Plann.er com endpoints de viagens" width="497" height="433" loading="lazy" decoding="async">
+                                    <span class="image-link" aria-hidden="true">↗</span>
+                                </a>
+                                <div class="project-info">
+                                    <div class="project-meta"><span>Projeto de estudo</span><span>02 / 02</span></div>
+                                    <h3>Plann.er API</h3>
+                                    <p>API para gerenciamento de viagens, com operações para criar, consultar, atualizar e excluir reservas.</p>
+                                    <dl class="project-case">
+                                        <div><dt>Atuação</dt><dd>Desenvolvimento de uma API para gerenciamento de viagens e reservas.</dd></div>
+                                        <div><dt>Funcionalidades</dt><dd>Operações para criar, consultar, atualizar e excluir reservas de viagem.</dd></div>
+                                    </dl>
+                                    <div class="project-footer">
+                                        <div class="tag-list"><span>API</span><span>Backend</span></div>
+                                        <a href="https://github.com/Natapires/Plann.er" target="_blank" rel="noreferrer">Ver código <span aria-hidden="true">↗</span></a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="project-card project-slide" role="group" aria-roledescription="slide" aria-label="3 de 3" aria-hidden="true" inert>
+                                <div class="project-image project-image-dashboard">
+                                    <img src="assets/images/gerenciador-clientes-ambientes.jpg" alt="Painel do sistema para gerenciar clientes e seus ambientes de desenvolvimento, homologação e produção" width="1145" height="659" loading="lazy" decoding="async">
+                                </div>
+                                <div class="project-info">
+                                    <div class="project-meta"><span>Freelance</span><span>03 / 03</span></div>
+                                    <h3>Gerenciador de clientes e ambientes</h3>
+                                    <p>Painel para organizar clientes e seus ambientes de desenvolvimento, homologação e produção.</p>
+                                    <dl class="project-case">
+                                        <div><dt>Atuação</dt><dd>Desenvolvimento freelance de um painel de gerenciamento.</dd></div>
+                                        <div><dt>Funcionalidades</dt><dd>Seções para acompanhar tarefas, acessos e tickets por ambiente.</dd></div>
+                                    </dl>
+                                    <div class="project-footer">
+                                        <div class="tag-list"><span>Gestão</span><span>Painel web</span></div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <div class="carousel-pagination" role="group" aria-label="Escolher projeto">
+                        </div>
+                        <p class="carousel-status" aria-live="polite" aria-atomic="true"><span class="carousel-status-current">01</span> <span class="carousel-status-total">/ 03</span></p>
+                        <div class="carousel-arrows">
+                            <button class="carousel-arrow" type="button" data-direction="previous" aria-label="Projeto anterior">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"></path></svg>
+                            </button>
+                            <button class="carousel-arrow" type="button" data-direction="next" aria-label="Próximo projeto">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contato">
+            <div class="container contact-content">
+                <p class="eyebrow">04 — Próximo passo</p>
+                <h2>Vamos tirar uma boa ideia <span>do papel?</span></h2>
+                <p>Estou aberto a novos projetos freelance e a conversas sobre oportunidades em desenvolvimento de software.</p>
+                <div class="contact-actions">
+                    <a class="button button-outline" href="https://www.linkedin.com/in/natapiresferreira/" target="_blank" rel="noreferrer">Me chame no LinkedIn <span aria-hidden="true">↗</span></a>
+                    <a class="button button-outline contact-whatsapp" href="#" target="_blank" rel="noreferrer" hidden>Fale comigo pelo WhatsApp <span aria-hidden="true">↗</span></a>
+                    <a class="button button-outline contact-resume" href="#" download hidden>Baixar meu currículo <span aria-hidden="true">↓</span></a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 - Desenvolvido por Natã Pires</p>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <a class="wordmark" href="/">NP<span>.</span></a>
+            <p>&copy; <span id="current-year">2025</span> Natã Pires. Todos os direitos reservados.</p>
+            <a href="/">Voltar ao topo <span aria-hidden="true">↑</span></a>
+        </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
